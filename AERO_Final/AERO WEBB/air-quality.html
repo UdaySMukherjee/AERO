@@ -31,31 +31,33 @@
     </section>
     <!----- AIR QUALITY ----->
     <section>
-        <h1>Google Maps Search Bar</h1>
-        <!-- Add a search input box -->
-        <input type="text" id="search-input" placeholder="Enter a location">
-        <!-- Display the map -->
-        <div id="map"></div>
-        <div id="map"></div>
-        <!-- Call the initMap function when the Google Maps JavaScript API is loaded -->
-        <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3v-BKj8CypT5CcyAbypfzBUAh1cdOqmM&libraries=places&callback=initMap"></script>
-        <script src="script.js"></script>
-
-        <div class="graph">
-            <iframe width="450" height="260" style="border: 20px solid #cccccc;" src="https://thingspeak.com/channels/1913672/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Temperature&type=line&yaxis=%C2%B0C"></iframe>
-            <iframe width="450" height="260" style="border: 20px solid #cccccc;" src="https://thingspeak.com/channels/1913672/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Pressure&type=line&yaxis=Pa"></iframe>
-        </div>
-        <div class="graph">
-            <iframe width="450" height="260" style="border: 20px solid #cccccc;" src="https://thingspeak.com/channels/1913672/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=MQ4&type=line&yaxis=PPM"></iframe>
-            <iframe width="450" height="260" style="border: 20px solid #cccccc;" src="https://thingspeak.com/channels/1913672/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=MQ5&type=line&yaxis=PPM"></iframe>
-        </div>
-        <div class="graph">
-            <iframe width="450" height="260" style="border: 20px solid #cccccc;" src="https://thingspeak.com/channels/1913672/charts/5?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=MQ7&type=line&yaxis=PPM"></iframe>
-            <iframe width="450" height="260" style="border: 20px solid #cccccc;" src="https://thingspeak.com/channels/1913672/charts/6?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=MQ8&type=line&yaxis=PPM"></iframe>
-        </div>
-        <div class="graph">
-            <iframe width="450" height="260" style="border: 20px solid #cccccc;" src="https://thingspeak.com/channels/1913672/charts/7?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=MQ9&type=line&yaxis=PPM"></iframe>
-            <iframe width="450" height="260" style="border: 20px solid #cccccc;" src="https://thingspeak.com/channels/1913672/charts/8?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=MQ135&type=line&yaxis=PPM"></iframe>
+        <div class="container">
+            <h1>Enter your location to get the data from the nearest sensor from you</h1>
+            <!-- Add a search input box -->
+            <input type="text" id="search-input" placeholder="What's Your Location?">
+            <!-- Display the map -->
+            <div id="map"></div>
+        
+            <!-- Bing Maps API script tag -->
+            <script type="text/javascript" src="https://www.bing.com/api/maps/mapcontrol?callback=initMap" async defer></script>
+            <script src="script.js"></script>
+        
+            <div class="graph">
+                <iframe width="450" height="260" style="border: 20px solid #cccccc;" src="https://thingspeak.com/channels/1913672/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Temperature&type=line&yaxis=%C2%B0C"></iframe>
+                <iframe width="450" height="260" style="border: 20px solid #cccccc;" src="https://thingspeak.com/channels/1913672/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Pressure&type=line&yaxis=Pa"></iframe>
+            </div>
+            <div class="graph">
+                <iframe width="450" height="260" style="border: 20px solid #cccccc;" src="https://thingspeak.com/channels/1913672/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=MQ4&type=line&yaxis=PPM"></iframe>
+                <iframe width="450" height="260" style="border: 20px solid #cccccc;" src="https://thingspeak.com/channels/1913672/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=MQ5&type=line&yaxis=PPM"></iframe>
+            </div>
+            <div class="graph">
+                <iframe width="450" height="260" style="border: 20px solid #cccccc;" src="https://thingspeak.com/channels/1913672/charts/5?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=MQ7&type=line&yaxis=PPM"></iframe>
+                <iframe width="450" height="260" style="border: 20px solid #cccccc;" src="https://thingspeak.com/channels/1913672/charts/6?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=MQ8&type=line&yaxis=PPM"></iframe>
+            </div>
+            <div class="graph">
+                <iframe width="450" height="260" style="border: 20px solid #cccccc;" src="https://thingspeak.com/channels/1913672/charts/7?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=MQ9&type=line&yaxis=PPM"></iframe>
+                <iframe width="450" height="260" style="border: 20px solid #cccccc;" src="https://thingspeak.com/channels/1913672/charts/8?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=MQ135&type=line&yaxis=PPM"></iframe>
+            </div>
         </div>
     </section>
 
