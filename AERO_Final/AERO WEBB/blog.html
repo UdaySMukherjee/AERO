@@ -49,10 +49,10 @@
                 </p>
                 <div class="comment-box">
                     <h3>Leave a comment</h3>
-                    <form class="comment-form">
-                        <input type="text" placeholder="Enter Name">
-                        <input type="text" placeholder="Enter Email">
-                        <textarea rows="5" placeholder="Your comment">
+                    <form class="comment-form" action="form-handler.php" method="post">
+                        <input type="text" name="name" placeholder="Enter Name">
+                        <input type="text" name="email" placeholder="Enter Email">
+                        <textarea rows="5" name="comment" placeholder="Your comment">
                         </textarea>
                         <button type="Submit" class="hero-btn red-btn">POST COMMENT</button>
                     </form>
@@ -94,13 +94,7 @@
         <h4>ABOUT US</h4>
         <p>The IoT-based air quality monitoring system is a flexible, portable, <br> 
             and customizable network of devices that provides real-time analysis of the surrounding environment.</p>
-        <div class="icons">
-            <i class="fa fa-facebook"></i>
-            <i class="fa fa-linkedin"></i>
-            <i class="fa fa-instagram"></i>
-            <i class="fa fa-twitter"></i>
-            <i class="fa fa-github"></i>
-        </div>
+        
         <p>Made with <i class="fa fa-heart-o"></i> by Team AERO</p>
         </section>
     <!-----Javascript for toggle menu----->
