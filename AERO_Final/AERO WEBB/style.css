@@ -377,18 +377,53 @@ h3{
 }
 
 /*----- air quality page -----*/
-.graph{
+.graph {  
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    gap: 10px;
+}
+  
+.graph iframe {
+    border: 20px solid #cccccc;
+    width: 450px;
+    height: 260px;
+    margin-bottom: 10px;
+}
+
+h1{
     display: flex;
-    margin: 0;
-    padding: 10px;
-    box-sizing: border-box;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
 }
-#map{
-    height: 400px;
-    width: 100%;
+  
+#search-input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 100px;
 }
+
+#map {
+    height: 700px;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+@media (max-width: 700px){
+    h1{
+        font-size: 16px;
+    }
+    #search-input {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 20px;
+    }
+}
+
 /*----- blog-content-----*/
 .blog-content{
     width: 80%;
