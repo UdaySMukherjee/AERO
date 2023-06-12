@@ -31,6 +31,16 @@
     </section>
     <!----- AIR QUALITY ----->
     <section>
+        <h1>Google Maps Search Bar</h1>
+        <!-- Add a search input box -->
+        <input type="text" id="search-input" placeholder="Enter a location">
+        <!-- Display the map -->
+        <div id="map"></div>
+        <div id="map"></div>
+        <!-- Call the initMap function when the Google Maps JavaScript API is loaded -->
+        <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3v-BKj8CypT5CcyAbypfzBUAh1cdOqmM&libraries=places&callback=initMap"></script>
+        <script src="script.js"></script>
+
         <div class="graph">
             <iframe width="450" height="260" style="border: 20px solid #cccccc;" src="https://thingspeak.com/channels/1913672/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Temperature&type=line&yaxis=%C2%B0C"></iframe>
             <iframe width="450" height="260" style="border: 20px solid #cccccc;" src="https://thingspeak.com/channels/1913672/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Pressure&type=line&yaxis=Pa"></iframe>
@@ -54,13 +64,6 @@
         <h4>ABOUT US</h4>
         <p>The IoT-based air quality monitoring system is a flexible, portable, <br> 
             and customizable network of devices that provides real-time analysis of the surrounding environment.</p>
-        <div class="icons">
-            <i class="fa fa-facebook"></i>
-            <i class="fa fa-linkedin"></i>
-            <i class="fa fa-instagram"></i>
-            <i class="fa fa-twitter"></i>
-            <i class="fa fa-github"></i>
-        </div>
         <p>Made with <i class="fa fa-heart-o"></i> by Team AERO</p>
         </section>
     <!-----Javascript for toggle menu----->
