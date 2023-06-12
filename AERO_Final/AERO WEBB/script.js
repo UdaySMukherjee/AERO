@@ -1,51 +1,65 @@
 function initMap() {
-    const map = new google.maps.Map(document.getElementById('map'), {
-      center: { lat: 0, lng: 0 },
-      zoom: 8
-    });
+  var map = new Microsoft.Maps.Map(document.getElementById('map'), {
+    credentials: 'AtM3pUo7TnWEkgsJv9YURorzYHMNJUZB6RzS3J_ozE8J9D45eImWJALbZFQDD71Y'
+  });
 
-    // Create the search box and link it to the UI element
-    const searchInput = document.getElementById('search-input');
-    const searchBox = new google.maps.places.SearchBox(searchInput);
+  // Add the search location functionality
+  document.getElementById('search-input').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      searchLocation();
+    }
+  });
 
-    // Bias the SearchBox results towards the current map's viewport
-    map.addListener('bounds_changed', function() {
-      searchBox.setBounds(map.getBounds());
-    });
+  // Perform a search based on the chosen location from the dropdown
+  document.getElementById('location-choices').addEventListener('change', function() {
+    var location = this.value;
+    if (location) {
+      document.getElementById('search-input').value = location;
+      searchLocation();
+    }
+  });
 
-    // Listen for the event when a user selects a prediction from the search box
-    searchBox.addListener('places_changed', function() {
-      const places = searchBox.getPlaces();
+  function searchLocation() {
+    var location = document.getElementById('search-input').value;
+    Microsoft.Maps.loadModule('Microsoft.Maps.Search', function () {
+      var searchManager = new Microsoft.Maps.Search.SearchManager(map);
+      var requestOptions = {
+        bounds: map.getBounds(),
+        where: location,
+        callback: function (answer, userData) {
+          if (answer && answer.results && answer.results.length > 0) {
+            var location = answer.results[0].location;
+            map.setView({ center: location });
 
-      if (places.length === 0) {
-        return;
-      }
+            // Pinpoint the location on the map
+            var pin = new Microsoft.Maps.Pushpin(location, { color: 'red' });
+            map.entities.push(pin);
 
-      // Clear any existing markers on the map
-      const markers = [];
-      markers.forEach(function(marker) {
-        marker.setMap(null);
-      });
+            // Calculate the minimum distance from predefined locations
+            var predefinedLocations = [
+              { name: 'Location 1', coordinates: new Microsoft.Maps.Location(latitude1, longitude1) },
+              { name: 'Location 2', coordinates: new Microsoft.Maps.Location(latitude2, longitude2) },
+              { name: 'Location 3', coordinates: new Microsoft.Maps.Location(latitude3, longitude3) },
+              { name: 'Location 4', coordinates: new Microsoft.Maps.Location(latitude4, longitude4) }
+            ];
 
-      // For each place, add a marker and center the map on the selected place
-      const bounds = new google.maps.LatLngBounds();
-      places.forEach(function(place) {
-        if (!place.geometry || !place.geometry.location) {
-          console.log('Returned place contains no geometry');
-          return;
+            var minDistance = Number.MAX_VALUE;
+            var nearestLocation;
+
+            for (var i = 0; i < predefinedLocations.length; i++) {
+              var distance = Microsoft.Maps.SpatialMath.getDistance(location, predefinedLocations[i].coordinates);
+              if (distance < minDistance) {
+                minDistance = distance;
+                nearestLocation = predefinedLocations[i].name;
+              }
+            }
+
+            // Display the nearest location
+            console.log('Nearest location: ' + nearestLocation + ', Distance: ' + minDistance + ' meters');
+          }
         }
-
-        const marker = new google.maps.Marker({
-          map: map,
-          title: place.name,
-          position: place.geometry.location
-        });
-
-        markers.push(marker);
-        bounds.extend(place.geometry.location);
-      });
-
-      // Center the map on the selected place
-      map.fitBounds(bounds);
+      };
+      searchManager.geocode(requestOptions);
     });
   }
+}
