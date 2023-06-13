@@ -137,6 +137,10 @@ p{
     display: flex;
     justify-content: space-between;
 }
+.row2{
+    display: flex;
+    padding-left: 300px;
+}
 .ABOUT-col{
     flex-basis: 31%;
     background: #fff3f3;
