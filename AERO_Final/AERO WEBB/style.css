@@ -139,7 +139,9 @@ p{
 }
 .row2{
     display: flex;
-    padding-left: 300px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 .ABOUT-col{
     flex-basis: 31%;
