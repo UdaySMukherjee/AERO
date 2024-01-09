@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <titte></titte>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gststic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@900&family=Pacifico&family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="images/Logo (1).png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()" style="font: size 24px;color:white"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="air-quality.html">AIR-QUALITY</a></li>
+                    <li><a href="blog.html">MODEL</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()" style="font: size 24px; color:white"></i>
+        </nav>
+        <h1>AIR QUALITY</h1>
+    </section>
+    <!----- AIR QUALITY ----->
+    <section>
+        <div class="container">
+            <!-- Display the map -->
+            <div id="map"></div>
+        
+            <div id="map-container">
+                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1JURz2elAAw1ZmNWsM59NCZoL03p87pQ&ehbc=2E312F" width="1524" height="680"></iframe>
+                <div class="input-container">
+                    <input
+                        type="text"
+                        id="latitude-input"
+                        placeholder="Enter latitude"
+                        style="margin-top: 10px "
+                    />
+      
+                    <input
+                        type="text"
+                        id="longitude-input"
+                        placeholder="Enter longitude"
+                        style="margin-top: 10px"
+                    />
+                    <button onclick="findMinimumDistance()">Search Nearest Sensor</button>
+                </div>
+            </div>
+            <script src="script.js"></script>
+            <!--Sensor 1 -->
+            <div class="graph">
+                <iframe src="https://thingspeak.com/channels/1913672/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Temperature&type=line&yaxis=%C2%B0C"></iframe>
+                <iframe src="https://thingspeak.com/channels/1913672/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Pressure&type=line&yaxis=Pa"></iframe>
+            </div>
+            <div class="graph">
+                <iframe src="https://thingspeak.com/channels/1913672/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=MQ4&type=line&yaxis=PPM"></iframe>
+                <iframe src="https://thingspeak.com/channels/1913672/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=MQ5&type=line&yaxis=PPM"></iframe>
+            </div>
+            <div class="graph">
+                <iframe src="https://thingspeak.com/channels/1913672/charts/5?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=MQ7&type=line&yaxis=PPM"></iframe>
+                <iframe src="https://thingspeak.com/channels/1913672/charts/6?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=MQ8&type=line&yaxis=PPM"></iframe>
+            </div>
+            <div class="graph">
+                <iframe src="https://thingspeak.com/channels/1913672/charts/7?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=MQ9&type=line&yaxis=PPM"></iframe>
+                <iframe src="https://thingspeak.com/channels/1913672/charts/8?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=MQ135&type=line&yaxis=PPM"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!----- footer ----->
+    <section class="footer">
+        <h4>OUR MOTO</h4>
+        <p>Breathing clean air is a fundamental right. <br>Our IoT-based air quality monitoring system empowers you to take control and create a healthier future for yourself and the planet</p>
+        <p>Made with <i class="fa fa-heart-o"></i> by Team AERO</p>
+        </section>
+    <!-----Javascript for toggle menu----->
+    <script>
+        var navLinks = document.getElementById('navLinks')
+        function showMenu(){
+            navLinks.style.right='0';
+        }
+        function hideMenu(){
+            navLinks.style.right='-200px';
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="slider.js"></script>
+</body>
+</html>

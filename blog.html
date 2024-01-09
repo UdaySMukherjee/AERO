@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <titte></titte>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gststic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@900&family=Pacifico&family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="images/Logo (1).png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()" style="font: size 24px;color:white"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="air-quality.html">AIR-QUALITY</a></li>
+                    <li><a href="blog.html">MODEL</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()" style="font: size 24px; color:white"></i>
+        </nav>
+        <h1>Model Performance</h1>
+    </section>
+    <!----- BLOG ----->
+    <section class="blog-content">
+        <div class="row">
+            <div class="blog-left">
+                <h2> Machine Learning Algorithms and Accuracies:</h2>
+                <p> In our air quality monitoring system, machine learning algorithms play a crucial role in analyzing sensor data, detecting patterns, and predicting air quality parameters. 
+                    We employ machine learning algorithms for two main tasks: classification of weather conditions and regression for temperature, humidity, and precipitation probability prediction.
+                </p>
+                <h2> Classification over weather conditions:</h2>
+                <p> Support Vector Classification (SVC): SVC is a supervised learning algorithm that can be used for classification tasks. It finds an optimal hyperplane that 
+                    maximally separates data points into different classes. SVC is useful for identifying and classifying different types of gases based on sensor data.
+                    <br>
+                    XGBoost: XGBoost is an optimized gradient boosting algorithm that is highly effective for both regression and classification tasks. 
+                    It builds a predictive model by combining multiple weak learners to make accurate predictions. XGBoost is known for its high performance and ability to handle 
+                    large datasets, making it suitable for analyzing air quality data.
+                    <br>
+                    Naive Bayes: Naive Bayes is a probabilistic classifier based on Bayes' theorem. It assumes that features are independent of each other, which simplifies the 
+                    calculation of probabilities. Naive Bayes is often used in text classification, but it can also be applied to air quality monitoring to classify different types 
+                    of gases based on sensor data.
+                    <br>
+                    Random Forest: Random Forest is an ensemble learning algorithm that constructs a multitude of decision trees and combines their predictions to make accurate 
+                    classifications or regression predictions. Random Forest is robust against overfitting and can handle large datasets effectively. It is suitable for analyzing 
+                    air quality data and detecting patterns or anomalies.
+                    <br>
+                    Softmax Regression: Softmax regression, also known as multiclass logistic regression, is used for multi-class classification problems. It calculates the 
+                    probabilities of an input belonging to each class and assigns it to the class with the highest probability. Softmax regression is useful for classifying different 
+                    types of gases based on sensor data.
+                </p>
+                <h2> Regression of Temperature, Humidity, and Precipitation Probability prediction:</h2>
+                <p> Maximum temperature: For predicting maximum temperature, we use Linear Regression, achieving an R2 score of 0.9572. 
+                    Linear regression models the relationship between the maximum temperature and input features using a linear equation, allowing us to make accurate predictions.<br>
+                    Minimum temperature: To predict minimum temperature, we utilize 2nd order Polynomial Regression, achieving an R2 score of 0.9810. 
+                    Polynomial regression captures non-linear relationships between the minimum temperature and input features by fitting a polynomial equation of degree 2.<br>                    
+                    Humidity: For humidity prediction, we employ Regression over any degree. The R2 score achieved is 1.0, indicating a perfect fit. 
+                    Regression models estimate the humidity based on the input features, and by selecting an appropriate degree, we can capture the relationship accurately.<br>
+                    Precipitation chance (continuous): To predict precipitation probability, we use 2nd order Polynomial Regression, achieving an impressive R2 score of 0.9998. 
+                    This indicates an extremely accurate fit to the data, allowing us to predict precipitation probabilities with high precision.
+                </p>
+                
+            </div>
+            <div class="blog-right">
+                <div class="heading-container">
+                    <h3>Classification</h3>
+                    <h3>Accuracy</h3>
+                    <h3>F1 Score</h3>
+                </div>
+                <div>
+                    <span> SVC </span>
+                    <span>82.28 %</span>
+                    <span>.8195</span>
+                </div>
+                <div>
+                    <span>XGBOOST</span>
+                    <span>90 %</span>
+                    <span>.8667</span>
+                </div>
+                <div>
+                    <span>Naive Bayes</span>
+                    <span>91.25 %</span>
+                    <span>.9117</span>
+                </div>
+                <div>
+                    <span>Random Forest</span>
+                    <span>93.67 %</span>
+                    <span>.9369</span>
+                </div>
+                <div>
+                    <span>Softmax</span>
+                    <span>96.20 %</span>
+                    <span>.9618</span>
+                </div>
+                <div class="heading-container">
+                    <h3>Regression</h3>
+                    <h3>R2 score</h3>
+                </div>
+                <div>
+                    <span>For Maximum temperature<br>using Linear Regression</span>
+                    <span>.9572</span>
+                </div>
+                <div>
+                    <span>For minimum temperature<br>using 2nd order Polynomial Regression</span>
+                    <span>.9572</span>
+                </div>
+                <div>
+                    <span>For Humidity<br>using Regression over any degree</span>
+                    <span>.9810</span>
+                </div>
+                <div>
+                    <span>For precipitation chance(continuous)<br>using 2nd orderPolynomial Regression</span>
+                    <span>.9998</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="blog-content">
+        <div class="row">
+            <div class="blog-left">
+                <div class="comment-box">
+                    <h3>Leave a comment</h3>
+                    <form class="comment-form" action="form-handler.php" method="post">
+                        <input type="text" name="name" placeholder="Enter Name">
+                        <input type="text" name="email" placeholder="Enter Email">
+                        <textarea rows="5" name="comment" placeholder="Your comment">
+                        </textarea>
+                        <button type="Submit" class="hero-btn red-btn">POST COMMENT</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!----- footer ----->
+    <section class="footer">
+        <h4>OUR MOTO</h4>
+        <p>Breathing clean air is a fundamental right. <br>Our IoT-based air quality monitoring system empowers you to take control and create a healthier future for yourself and the planet</p>
+        
+        <p>Made with <i class="fa fa-heart-o"></i> by Team AERO</p>
+        </section>
+    <!-----Javascript for toggle menu----->
+    <script>
+        var navLinks = document.getElementById('navLinks')
+        function showMenu(){
+            navLinks.style.right='0';
+        }
+        function hideMenu(){
+            navLinks.style.right='-200px';
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="slider.js"></script>
+</body>
+</html>

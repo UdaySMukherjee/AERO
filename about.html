@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <titte></titte>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gststic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@900&family=Pacifico&family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="images/Logo (1).png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()" style="font: size 24px;color:white"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="air-quality.html">AIR-QUALITY</a></li>
+                    <li><a href="blog.html">MODEL</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()" style="font: size 24px; color:white"></i>
+        </nav>
+        <h1>About the Model</h1>
+    </section>
+    <!----- about us content ----->
+    <section class="about-us">
+        <div class="row">
+            <div class="about-col">
+                <img src="images/model1.png">
+                <a href="air-quality.html" class="hero-btn red-btn">EXPLORE NOW</a>
+            </div>
+            <div class="about-col">
+                <h1>Technologies Used</h1>
+                <h2> Kalman Filtering: </h2>
+                <p>Kalman filtering is an algorithm used in our IoT-based air quality monitoring system to improve the accuracy and reliability of sensor measurements. 
+                    It is a recursive algorithm that estimates the true state of a system based on a series of noisy observations. 
+                    The Kalman filter considers both the current sensor measurement and the predicted state of the system to generate an optimal estimate of the true state.
+                    <br>
+                    The Kalman filter consists of two main steps: the prediction step and the update step. 
+                    In the prediction step, the filter predicts the next state of the system based on the previous state estimate and the system dynamics. 
+                    This prediction takes into account factors such as sensor noise and system uncertainties.
+                    <br>
+                    The update step incorporates the new sensor measurement into the prediction to refine the state estimate. 
+                    The Kalman filter calculates the Kalman gain, which determines how much the measurement should be weighted in the estimation process. 
+                    By iteratively repeating these steps, the filter continuously updates and refines its estimate of the true state.
+                    <br>
+                    The formulas used in the Kalman filter include:
+                    <br>
+                    Prediction step:
+                    <br>
+                    State prediction: x̂ₖ = Fxₖ₋₁ + Buₖ₋₁
+                    Covariance prediction: Pₖ = FPFᵀ + Q
+                    Update step:
+                    <br>
+                    Kalman gain: Kₖ = PHᵀ / (HPHᵀ + R)
+                    State update: xₖ = x̂ₖ + Kₖ(yₖ - Hx̂ₖ)
+                    Covariance update: Pₖ = (I - KH)Pₖ
+                    Here, xₖ represents the true state of the system at time step k, x̂ₖ is the estimated state, F is the state transition matrix, B is the control input matrix, 
+                    uₖ is the control input, Pₖ is the state covariance matrix, Q is the process noise covariance matrix, H is the measurement matrix, yₖ is the sensor measurement, 
+                    R is the measurement noise covariance matrix, and I is the identity matrix.
+                    <br>
+                    By applying the Kalman filter algorithm to the sensor measurements in our air quality monitoring system, we can reduce noise, filter out uncertainties, 
+                    and obtain more accurate and reliable estimates of atmospheric gas concentrations.
+                </p>
+                <h2> IoT and MQTT Protocol: </h2>
+                <p>In our air quality monitoring system, we leverage the Internet of Things (IoT) technology to enable seamless connectivity and communication between the 
+                    monitoring device and users' smartphones or other devices. To achieve this, we utilize the MQTT (Message Queuing Telemetry Transport) protocol.
+                    <br>
+                    The MQTT protocol is a lightweight and efficient messaging protocol designed for IoT applications. 
+                    It follows a publish-subscribe model, where devices publish messages to a broker and other devices subscribe to specific topics to receive those messages. 
+                    The MQTT protocol uses a client-server architecture, with the broker acting as the intermediary between publishers and subscribers.
+                    <br>
+                    The key components of the MQTT protocol include:
+                    <br>
+                    Broker: The MQTT broker is a server that receives messages published by devices and distributes them to the appropriate subscribers. 
+                    It ensures efficient message routing and delivery.
+                    <br>
+                    Publisher: A device that publishes messages to specific topics on the broker. 
+                    In our air quality monitoring system, the monitoring device acts as a publisher, sending sensor data to the broker.
+                    <br>
+                    Subscriber: A device that subscribes to specific topics on the broker to receive messages. 
+                    In our system, users' smartphones or other devices act as subscribers, receiving air quality data from the broker.
+                    <br>
+                    The MQTT protocol offers several advantages for IoT applications, such as low bandwidth and resource requirements, support for asynchronous communication, 
+                    and reliable message delivery. It allows real-time and bi-directional communication between devices, enabling users to receive timely updates on air quality parameters.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!----- footer ----->
+    <section class="footer">
+        <h4>OUR MOTO</h4>
+        <p>Breathing clean air is a fundamental right. <br>Our IoT-based air quality monitoring system empowers you to take control and create a healthier future for yourself and the planet</p>
+        <p>Made with <i class="fa fa-heart-o"></i> by Team AERO</p>
+        </section>
+    <!-----Javascript for toggle menu----->
+    <script>
+        var navLinks = document.getElementById('navLinks')
+        function showMenu(){
+            navLinks.style.right='0';
+        }
+        function hideMenu(){
+            navLinks.style.right='-200px';
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="slider.js"></script>
+</body>
+</html>
